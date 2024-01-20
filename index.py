@@ -1,7 +1,6 @@
 import streamlit as st
 import joblib
 import pandas as pd
-logisticreg = joblib.load('dumped_model.joblib','r')
 
 st.title('Titanic Dataset')
 st.write('Using Logistic Regression')
@@ -18,6 +17,7 @@ embarked_s = st.number_input('Embarked_S')
 
 if st.button('Predict'):
     # Create a DataFrame with named columns
+    logisticreg = joblib.load('dumped_model.joblib','r'
     input_data = pd.DataFrame({
         'PassengerId': [passenger_id],
         'Pclass': [pclass],

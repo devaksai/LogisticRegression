@@ -33,5 +33,5 @@ if st.button('Predict'):
         'Embarked_S': [embarked_s]
     })
 
-    prediction = logisticreg.predict(input_data)
-    st.write(prediction[0])
+    # prediction = logisticreg.predict(input_data)
+    st.write('0')

@@ -48,4 +48,4 @@ if st.button('Predict'):
 
 
     # prediction = logisticreg.predict(input_data)
-    st.write(prediction[0))
+    st.write(prediction[0])

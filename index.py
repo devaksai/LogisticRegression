@@ -15,23 +15,37 @@ gender_class_female = st.number_input('GenderClass_female')
 gender_class_male = st.number_input('GenderClass_male')
 embarked_q = st.number_input('Embarked_Q')
 embarked_s = st.number_input('Embarked_S')
-print(passenger_id)
 
 if st.button('Predict'):
     # Create a DataFrame with named columns
-    logisticreg = joblib.load('dumped_model.joblib','r')
+    model = joblib.load('dumped_model.joblib','r')
 
+    # input_data = pd.DataFrame({
+    #     'PassengerId': [passenger_id],
+    #     'Pclass': [pclass],
+    #     'Age': [age],
+    #     'Fare': [fare],
+    #     'FamilySize': [family_size],
+    #     'GenderClass_female': [gender_class_female],
+    #     'GenderClass_male': [gender_class_male],
+    #     'Embarked_Q': [embarked_q],
+    #     'Embarked_S': [embarked_s]
+    # })
     input_data = pd.DataFrame({
-        'PassengerId': [passenger_id],
-        'Pclass': [pclass],
-        'Age': [age],
-        'Fare': [fare],
-        'FamilySize': [family_size],
-        'GenderClass_female': [gender_class_female],
-        'GenderClass_male': [gender_class_male],
-        'Embarked_Q': [embarked_q],
-        'Embarked_S': [embarked_s]
+    'PassengerId': [10000],
+    'Pclass': [3],
+    'Age': [22],
+    'Fare': [7.25],
+    'FamilySize': [2],
+    'GenderClass_female': [0],
+    'GenderClass_male': [1],
+    'Embarked_Q': [0],
+    'Embarked_S': [1]
     })
+    
+    prediction = model.predict(input_data)
+    print(prediction[0])
+
 
     # prediction = logisticreg.predict(input_data)
-    st.write('0')
+    st.write(prediction[0))

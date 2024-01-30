@@ -2,9 +2,10 @@ import streamlit as st
 import joblib
 import pandas as pd
 
+model = joblib.load('dumped_model.joblib','r')
+
 st.title('Titanic Dataset')
 st.write('Using Logistic Regression')
-
 
 passenger_id = st.number_input('PassengerId')
 pclass = st.number_input('Pclass')
@@ -18,8 +19,6 @@ embarked_s = st.number_input('Embarked_S')
 
 if st.button('Predict'):
     # Create a DataFrame with named columns
-    model = joblib.load('dumped_model.joblib','r')
-
     input_data = pd.DataFrame({
         'PassengerId': [passenger_id],
         'Pclass': [pclass],
@@ -33,8 +32,4 @@ if st.button('Predict'):
     })
     
     prediction = model.predict(input_data)
-    print(prediction[0])
-
-
-    # prediction = logisticreg.predict(input_data)
     st.write(prediction[0])

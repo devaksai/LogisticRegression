@@ -20,27 +20,16 @@ if st.button('Predict'):
     # Create a DataFrame with named columns
     model = joblib.load('dumped_model.joblib','r')
 
-    # input_data = pd.DataFrame({
-    #     'PassengerId': [passenger_id],
-    #     'Pclass': [pclass],
-    #     'Age': [age],
-    #     'Fare': [fare],
-    #     'FamilySize': [family_size],
-    #     'GenderClass_female': [gender_class_female],
-    #     'GenderClass_male': [gender_class_male],
-    #     'Embarked_Q': [embarked_q],
-    #     'Embarked_S': [embarked_s]
-    # })
     input_data = pd.DataFrame({
-    'PassengerId': [10000],
-    'Pclass': [3],
-    'Age': [22],
-    'Fare': [7.25],
-    'FamilySize': [2],
-    'GenderClass_female': [0],
-    'GenderClass_male': [1],
-    'Embarked_Q': [0],
-    'Embarked_S': [1]
+        'PassengerId': [passenger_id],
+        'Pclass': [pclass],
+        'Age': [age],
+        'Fare': [fare],
+        'FamilySize': [family_size],
+        'GenderClass_female': [gender_class_female],
+        'GenderClass_male': [gender_class_male],
+        'Embarked_Q': [embarked_q],
+        'Embarked_S': [embarked_s]
     })
     
     prediction = model.predict(input_data)

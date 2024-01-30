@@ -5,7 +5,7 @@ import pandas as pd
 st.title('Titanic Dataset')
 st.write('Using Logistic Regression')
 
-logisticreg = joblib.load('dumped_model.joblib','r')
+# logisticreg = joblib.load('dumped_model.joblib','r')
 
 passenger_id = st.number_input('PassengerId')
 pclass = st.number_input('Pclass')

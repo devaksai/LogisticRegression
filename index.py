@@ -5,6 +5,8 @@ import pandas as pd
 st.title('Titanic Dataset')
 st.write('Using Logistic Regression')
 
+logisticreg = joblib.load('dumped_model.joblib','r')
+
 passenger_id = st.number_input('PassengerId')
 pclass = st.number_input('Pclass')
 age = st.number_input('Age')
@@ -17,7 +19,6 @@ embarked_s = st.number_input('Embarked_S')
 
 if st.button('Predict'):
     # Create a DataFrame with named columns
-    logisticreg = joblib.load('dumped_model.joblib','r')
     input_data = pd.DataFrame({
         'PassengerId': [passenger_id],
         'Pclass': [pclass],

@@ -16,6 +16,7 @@ gender_class_female = st.number_input('GenderClass_female')
 gender_class_male = st.number_input('GenderClass_male')
 embarked_q = st.number_input('Embarked_Q')
 embarked_s = st.number_input('Embarked_S')
+print(passenger_id)
 
 if st.button('Predict'):
     # Create a DataFrame with named columns
